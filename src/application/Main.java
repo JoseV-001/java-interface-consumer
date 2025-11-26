@@ -24,11 +24,7 @@ public class Main {
 
         double factor = tl;          // Variável externa usada dentro da lambda
 
-        Consumer<Product> cons = p -> { // { } são opcionais para uma única instrução
-            p.setPrice(p.getPrice() * factor);
-        };
-
-        list.forEach(cons);
+        list.forEach(p -> p.setPrice(p.getPrice() * factor));
 
         list.forEach(System.out::println);
 
