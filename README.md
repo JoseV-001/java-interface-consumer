@@ -1,7 +1,9 @@
-# java-consumer-implementations
+# java-interface-consumer
 # Exemplos de Implementação de Consumer em Java
 
 Este projeto contém diferentes formas de implementar a interface funcional `Consumer<T>`.
+
+O projeto faz um programa que, a partir de uma lista de produtos, aumenta o preço dos produtos em 10%.
 
 ## Versões incluídas:
 
