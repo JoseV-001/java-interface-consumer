@@ -1,13 +1,16 @@
 package application;
 
 import model.entities.Product;
-import util.PriceUpdate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.function.Consumer;
 
 public class Main {
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
 
         List<Product> list = new ArrayList<>();
 
@@ -16,7 +19,16 @@ public class Main {
         list.add(new Product("Tablet", 350.00));
         list.add(new Product("HD Case", 80.90));
 
-        list.forEach(Product::nonStaticPriceUpdate);
+
+        double tl = sc.nextDouble(); // Valor lido do usuário
+
+        double factor = tl;          // Variável externa usada dentro da lambda
+
+        Consumer<Product> cons = p -> { // { } são opcionais para uma única instrução
+            p.setPrice(p.getPrice() * factor);
+        };
+
+        list.forEach(cons);
 
         list.forEach(System.out::println);
 
